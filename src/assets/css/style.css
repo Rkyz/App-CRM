@@ -1,0 +1,762 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Semi+Condensed:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
+@media screen and (min-width: 768px) {
+.container
+{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    position: relative;
+    width: 100%;
+}
+
+.container-profile{
+    z-index: 9999;
+    position: fixed;
+    right: -100px;
+    top: 0;
+}
+.navigation{
+    position: fixed;
+    top: 100px;
+    left: 0px;
+    bottom: 20px;
+    width: 300px;
+    margin-right: 20px;
+    box-sizing: initial;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #551cab;
+    transition: width 0.5s;
+    overflow: hidden;
+    height: 1000px;
+}
+
+.navigation.active
+{
+    width: 70px;
+}
+.side-top-navigation.active{
+    width: 90px;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navigation ul li{
+    list-style-type: none;
+    position: relative;
+    width: 100%;
+    border-bottom-left-radius: 40px;
+    border-top-left-radius: 40px;
+}
+.side-top-navigation li{
+    list-style-type: none;
+    position: relative;
+    width: 100%;
+    left: 40px;
+    top: 20px;
+    position: relative;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.navigation ul li.active{
+    background-color: #fff;
+}
+
+.navigation ul li.active.dark-mode{
+    background-color: #1c1c1c;
+}
+
+.navigation ul li b:nth-child(1){
+    top: -20px;
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    background-color: #fff;
+    display: none;
+}
+
+.navigation ul li b:nth-child(1)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #551cab;
+    border-bottom-right-radius: 20px;
+}
+
+
+.navigation ul li b:nth-child(2){
+    bottom: -20px;
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    display: none;
+    background-color: #fff;
+}
+
+.navigation ul li b:nth-child(2)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #551cab;
+    border-top-right-radius: 20px;
+}
+.navigation ul li.active b:nth-child(1),
+.navigation ul li.active b:nth-child(2){
+    display: block;
+}
+
+
+.navigation ul li a{
+    color: #fff;
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+.navigation ul li button{
+    color: #fff;
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent;
+    border: none;
+}
+
+.navigation ul li.active a{
+    color: #000;
+}
+.navigation ul li.active button{
+    color: #000;
+}
+
+.navigation ul li a .icon{
+    display: block;
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+.navigation ul li button .icon{
+    display: block;
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon{
+    font-size: 1.5em;
+}
+.navigation ul li button .icon ion-icon{
+    font-size: 1.5em;
+}
+.side-top-navigation li .icon ion-icon{
+    font-size: 2em;
+}
+
+.navigation ul li a .title{
+    display: block;
+    position: relative;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: normal;
+    outline: none;
+}
+.navigation ul li button .title{
+    display: block;
+    position: relative;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: normal;
+    outline: none;
+}
+
+.toggle{
+    position: static;
+    margin-top: 15px;
+    margin-left: 5px;
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+.header-show.active{
+    left: 110px;
+    position: fixed;
+}
+
+
+
+
+.toggle ion-icon,
+.second-toggle ion-icon{
+    font-size: 34px;
+    position: absolute;
+    color: #000000ab;
+}
+
+
+.notification-button{
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    position: relative;
+
+}
+.notification-button:hover{
+    background-color: #0000002c;
+}
+
+.number-notification{
+    color: white;
+    position: fixed;
+    top: 10px;
+    height: 20px;
+    width: 20px;
+    right: 120px;
+    border-radius: 50%;
+    font-size: 15px;
+    background-color: red;
+    text-align: center;
+    z-index: 99;
+}
+
+
+.notification-button ion-icon{
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+    color: black;
+}
+
+.top-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: fixed;
+    width: 115em;
+    transition: right 0.5s;
+  }
+
+  
+.side-top-navigation {
+    width: 320px;
+    height: 100px;
+    position: fixed;
+    left: -20px;
+    overflow: hidden;
+    background-color: #551cab;
+    margin-right: 20px;
+    transition: width 0.5s;
+    z-index: 1;
+}
+
+  
+  
+.top-navigation {
+    flex: 1;
+    justify-content: space-between;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    top: -20px;
+    height: 90px;
+    left: 50px;
+    display: flex;
+    transition: left 0.5s;
+    background-color: white;
+}
+
+  
+
+.side-top-navigation li a{    
+    text-decoration: none;
+    font-family: 'Climate Crisis', cursive;
+    color: #F1DEC9;
+    font-weight: bold;
+    position: relative;
+}
+
+.side-top-navigation .logo a::after{
+    content: 'Make A Day Will Be Free';
+    display: block;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.header-content
+ {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    left:6.8em;
+    right: 120px;
+    transition: left 0.5s,right 0.5s;
+}
+
+.header-navigation{
+    flex-wrap: wrap;
+    position: fixed;
+    top: 17em;
+    left: 110px;
+    right: 120px;
+    transition: left 0.5s,right 0.5s;
+}
+.header-data{
+    flex-wrap: wrap;
+    position: absolute;
+    top: 35.5em;
+    left: 110px;
+    right: 120px;
+    border-radius: 10px;
+    bottom: 20px;
+    box-sizing: initial;
+    overflow: hidden;
+    z-index: 1;
+    transition: left 0.5s, right 0.5s;
+}
+.header-data-1{
+    flex-wrap: wrap;
+    position: fixed;
+    top: 40.5em;
+    left: 110px;
+    right: 120px;
+    border-radius: 10px;
+    bottom: 20px;
+    box-sizing: initial;
+    overflow: hidden;
+    z-index: -1;
+    transition: left 0.5s, right 0.5s;
+}
+.header-side-content{
+    top: 1.1em;
+    right: 25px;
+    position: fixed;
+    width: 70px;
+    border-radius: 10px;
+    bottom: 20px;
+    z-index: 1;
+    overflow: hidden;
+    transition: width 0.5s;
+}
+
+.header-side-content.active{
+    position: fixed;
+    width: 310px;
+}
+
+.header-data.active{
+    position: absolute;
+    left: 340px;
+    right: 360px;
+}
+.content1{
+    display: flex;
+    position: absolute;
+    top: -250px;
+    left: 1px;
+    width: 105.5em;
+    transition: all 0.5s;
+}
+
+
+.content2,
+.content3{
+    right: 120px;
+    position: fixed;
+    transition: left 0.5s,right 0.5s;
+}
+
+.navigation-home{
+    flex-wrap: wrap;
+    position: fixed;
+    top: 38.5em;
+}
+
+.header-profile{
+    flex-wrap: wrap;
+    position: fixed;
+    top: 6.4em;
+    left: 110px;
+    right: 20px;
+    z-index: -1;
+    transition: left 0.5s;
+    display: flex;
+}
+
+
+.header-create{
+    flex-wrap: wrap;
+    position: fixed;
+    top: 6.4em;
+    left: 110px;
+    box-sizing: initial;
+    overflow: hidden;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 10px;
+    transition: left 0.5s;
+}
+.header-show{
+    flex-wrap: wrap;
+    position: fixed;
+    top: 6.4em;
+    left: 710px;
+    box-sizing: initial;
+    overflow: hidden;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 10px;
+    transition: left 0.5s;
+}
+
+.header-show.on{
+    left: 340px;
+}
+
+.header-content.active,
+.header-navigation.active{
+    position: fixed;
+    left: 340px;
+    right: 360px;
+    
+}
+
+.header-profile.active,
+.header-form.active,
+.header-create.active
+{
+    position: fixed;
+    left: 340px;
+}
+.content1.active,
+.content2.active,
+.content3.active
+{
+    position: absolute;
+    width: 76.3em;
+}
+
+
+.header-body {
+    flex: 1;
+    height: 150px;
+    background-color: #551cab;
+    border-radius: 10px;
+}
+
+.welcome{
+    color: white;
+    margin: 15px 0 0 15px;
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.second-navigation,
+.body-navigation {
+    flex: 1;
+    height: 70px;
+    background-color: #551cab;
+    border-radius: 10px;
+    z-index: 1;
+}
+.second-navigation ul{
+    list-style: none;
+    display: flex;
+}
+.second-navigation ul li{
+    margin-left: 20px;
+
+}
+.second-navigation ul li a{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 750px;
+    position: relative;
+    top: 24px;
+    text-decoration: none;
+}
+
+.navbar-and-content{
+    height: 1px;
+}
+
+
+.body-data {
+    flex: 1;
+    height: 500px;
+    background-color: #551cab;
+    display: flex;
+    bottom: 20px;
+}
+.body-data-1 {
+    flex: 1;
+    height: 450px;
+    background-color: #3c3c3c;
+    display: flex;
+    bottom: 20px;
+}
+.body-side-content {
+    flex: 1;
+    height: 1000px;
+    background-color: #551cab;
+    display: flex;
+    bottom: 20px;
+}
+
+.span-text{
+    display: grid;
+    margin: auto;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.span-icon{
+    display: grid;
+    margin: auto;
+    position: relative;
+    left: -10px;
+    color: white;
+}
+
+.span-icon.active{
+    display: none;
+}
+
+.body-notification{
+    display: none;
+}
+.body-notification.active{
+    display: block;
+    color: #fff;
+    margin-top: 15px;
+    margin-left: 70px;
+}
+
+.span-notive{
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.body-profile {
+    flex: 1;
+    height: 878px;
+    background-color: #46abe5;
+    border-radius: 10px;
+    display: flex;
+}
+
+.create-data {
+    height: 1000px;
+    background-color: #3c3c3c;
+    border-radius: 10px;
+}
+.show-data {
+    flex: 1;
+    height: 1000px;
+    background-color: #551cab;
+    border-radius: 10px;
+}
+
+.show-data-navbar{
+    background-color: #46abe5;
+    height: 70px;
+}
+
+
+.profile{
+    background-color: #333;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin: 5px 10px 0 0;
+}
+
+.profile-logo{
+    width: 50px;
+    height: 50px;
+}
+
+.welcome-button{
+    background-color: #46abe5;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    position: relative;
+    top: 10px;
+    left: 20px;
+    text-align: center;
+    align-items: center;
+    display: grid;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+    .top-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        position: fixed;
+        top: 20px;
+        left: 250px;
+        right: 120px;
+        z-index: 1;
+        transition: all 0.5s;
+    }
+        
+    .top-container.active{
+        position: fixed;
+        left: 30px;
+        width: 123em;
+    }
+
+
+      .search-input[type=search] {
+        position: fixed;
+        float: right;
+        top: 20px;
+        right: 180px;
+        border: none;
+        border-radius: 10px;
+        width: 50px;
+        height: 50px;
+        padding: 0 20px 5px 20px;
+        background-color: white;
+        box-shadow:
+        0 7px 25px #fff,
+        0 7px 25px rgba(255, 255, 255, 0.2),
+        0 7px 25px rgba(0, 0, 0, 0.2);
+        transition: all 1s;
+        direction: rtl;
+
+      }
+
+      .search-input[type=search]:focus{
+        outline: none;
+        box-shadow:
+        0 7px 25px #fff,
+        0 7px 25px rgba(255, 255, 255, 0.5),
+        0 7px 25px rgba(0, 0, 0, 0.5);
+        width: 500px;
+        background-color: white;
+        top: 25px;
+        height: 40px;
+      }
+      .search-input::placeholder{
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      .search-input.active{
+        left: 40%;
+      }
+      #app{
+        z-index: -999;
+      }
+  
+
+      
+}
+
+      @media screen and (max-width: 768px) {    
+
+        *{
+            display: none;
+        }
+        .android h1{
+            display: flex;
+        }
+        .second-toggle{
+            display: inline;
+            position: relative;
+            top: 15px;
+            left: 15px;
+        }
+        .welcome{
+            font-size: 25px;
+        }
+        .card-body-one{
+            display: none;
+        }
+        .header-profile{
+            flex-direction: column;
+            height: 878px;
+            gap: 20px;
+        }
+        .body-profile{
+            width: 100%;
+        }
+        .ftco-section{
+            display: none;
+        }
+        .header-body{
+            height: 130px;
+        }
+        .second-navigation{
+            position: relative;
+            top: -20px;
+            display: flex;
+        }
+    
+        .second-navigation ul.active{
+            display: flex;
+            margin-right: 290px;
+        }
+
+    }
+    
